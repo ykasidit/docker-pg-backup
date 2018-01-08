@@ -3,8 +3,8 @@
 # locks: https://stackoverflow.com/questions/185451/quick-and-dirty-way-to-ensure-only-one-instance-of-a-shell-script-is-running-at
 
 (
-  # Wait for lock on fd 200 for max 3 seconds - if fail then exit
-  flock -x -w 3 200 || exit 124
+  # Wait for lock on fd 200 for max 1 second - if fail then exit
+  flock -x -w 1 200 || exit 124
 
 echo "got exclusive lock - starting script..."
 # Do stuff
